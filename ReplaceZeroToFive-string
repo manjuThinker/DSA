@@ -1,0 +1,15 @@
+public class ReplaceZeroToFive {
+
+    public int convertfive(int num) {
+       String str=String.valueOf(num);
+       String k= str.replaceAll("0","5");
+       int i= Integer.parseInt(k);
+        return i;
+    }
+
+    public static void main(String args[]) {
+        ReplaceZeroToFive f = new ReplaceZeroToFive();
+        /*f.convertfive(1005);*/
+        System.out.println(f.convertfive(1005));
+    }
+}
