@@ -1,0 +1,19 @@
+import java.util.*;
+
+public class Valueequaltoindexvalue {
+    ArrayList<Integer> valueEqualToIndex(int arr[], int n) {
+        ArrayList<Integer> arrayList=new ArrayList<>();
+        for (int i=1;i<n-1;i++){
+            while(arr[i]==i){
+                arrayList.add(i);
+            }
+        }
+        return arrayList;
+    }
+
+    public static void main(String args[]) {
+        Valueequaltoindexvalue I = new Valueequaltoindexvalue();
+        int[] C = {0, 1,2, 3,4, 5, 8, 67, 8378, 87};
+        System.out.println(I.valueEqualToIndex(C,C.length));
+    }
+}
