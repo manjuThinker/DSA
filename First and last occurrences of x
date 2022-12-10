@@ -2,16 +2,16 @@ import java.util.*;
 
 public class lastoccurrencesofX {
     ArrayList<Long> find(long arr[], int n, int x) {
-       /* List al = Arrays.asList(arr);*/
-     /*   ArrayList<Long> array=new ArrayList<Long>();
+        /*List al = Arrays.asList(arr);*/
+        /*ArrayList<Long> array=new ArrayList<Long>();
         for (int i = 0; i < arr.length; i++) {
             array.add(Long.valueOf(arr[i]));
         }
         System.out.print(array);
-        *//*ArrayList<Long> array2=new ArrayList<Long>();*//*
-       *//* Long.valueOf(array.indexOf(x));
-        Long.valueOf(array.lastIndexOf(x));*//*
-        return array.indexOf(x);*/
+        ArrayList<Long> array2=new ArrayList<Long>();
+        Long.valueOf(array.indexOf(x));
+        Long.valueOf(array.lastIndexOf(x));
+        return array;*/
 
         ArrayList<Long> arrlist=new ArrayList<>();
 
@@ -19,14 +19,14 @@ public class lastoccurrencesofX {
         long last=-1;
         for(int i=0;i<n;i++) {
             if(arr[i]==x) {
-                first=i;
+                first=Long.valueOf(i);
                 break;
             }
         }
 
         for(int i=n-1;i>=0;i--) {
             if(arr[i]==x) {
-                last=i;
+                last=Long.valueOf(i);
                 break;
             }
         }
