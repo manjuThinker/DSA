@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class Valueequaltoindexvalue {
+    ArrayList<Integer> valueEqualToIndex(int arr[], int n) {
+        ArrayList<Integer> arrayList=new ArrayList<>();
+        for (int i=0;i<n;i++){
+            if (arr[i]==i+1){
+                arrayList.add(arr[i]);
+            }
+        }
+        return arrayList;
+    }
+
+    public static void main(String args[]) {
+        Valueequaltoindexvalue I = new Valueequaltoindexvalue();
+        int[] C = {1,2, 3,4, 5, 8, 67, 8378, 87};
+        System.out.println(I.valueEqualToIndex(C,C.length));
+    }
+}
+
+//Consider 1-based indexing for this problem
