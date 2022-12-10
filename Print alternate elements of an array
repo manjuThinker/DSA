@@ -1,0 +1,17 @@
+public class PrintAlternateElements {
+
+    public static void print(int arr[], int n)
+    {
+        for (int i=0; i<n;i=i+2){
+            System.out.print(arr[i]+" ");
+        }
+
+    }
+
+    public static void main(String args[]) {
+        PrintAlternateElements I = new PrintAlternateElements();
+        int[] Z= {1, 2, 3, 4, 5};
+        I.print(Z,Z.length);
+
+    }
+}
