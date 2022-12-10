@@ -1,0 +1,21 @@
+public class ReverseString {
+    public static String reverseWord(String str)
+    {
+        // Declaring a StringBuilder and converting string to StringBuilder
+        StringBuilder reverseString = new StringBuilder(str);
+        reverseString.reverse();
+        // Converting StringBuilder to String
+
+        String result = reverseString.toString();
+
+        return result;
+    }
+
+    public static void main(String args[]){
+        ReverseString R=new ReverseString();
+      /*  R.reverseWord("like") ;*/
+        System.out.println();
+        System.out.println(R.reverseWord("liking"));
+
+    }
+}
