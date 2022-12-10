@@ -1,0 +1,18 @@
+public class NumberOfOccureneces {
+    int count(int[] arr, int n, int x) {
+        int count=0;
+        for(int i=0;i<=n-1;i++){
+            if (arr[i]==x){
+                count=count+1;
+            }
+        }
+        return count;
+    }
+
+    public static void main(String args[]) {
+        NumberOfOccureneces I = new NumberOfOccureneces();
+        int[] Z= {1, 2, 3, 4, 5};
+        System.out.println(I.count(Z,Z.length,23));
+
+    }
+}
