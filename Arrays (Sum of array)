@@ -1,0 +1,16 @@
+public class sumOfArray {
+
+    public long getSum(long a[], long n)
+    {
+        long sum=0;
+        for (int i=0;i<n;i++){
+            sum=sum+a[i];
+        }
+        return sum;
+    }
+    public static void main(String args[]) {
+        sumOfArray B = new sumOfArray();
+        int[] Z= {9, 7, 2, 16, 4};
+        System.out.println(B.getSum(Z,Z.length));
+    }
+}
