@@ -1,0 +1,37 @@
+public class sumOfSeries {
+
+        long seriesSum(int n) {
+        
+        return (long)n*(n+1)/2;
+        //above is the optimized code
+        
+        
+            /*long sum = 0;
+            int i=1;
+//executes until the condition returns true
+            while (i <= n){
+//adding the value of i into sum variable
+                sum = sum + i;
+                i++;
+            }
+            return sum;
+        }*/
+           /* if (n != 0) {
+                //recursively calling the function
+                return n + seriesSum(n - 1);
+            }
+            //return the total when the number becomes zero
+            else {
+                return n;
+            }*/
+        }
+
+        public static void main(String args[]) {
+            sumOfSeries S = new sumOfSeries();
+            int n=100000;
+            /*int[] Z= {1, 2, 3, 4, 5};*/
+            System.out.println(S.seriesSum(n));
+
+        }
+
+}
