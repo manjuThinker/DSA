@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Reversewords {
+public class LastIndexOfOne {
 
     public int lastIndex( String s){
         // int n=s.length();
@@ -18,10 +18,9 @@ public class Reversewords {
      }
 
     public static void main(String args[]){
-            Reversewords R=new Reversewords();
-            /*R.reverseWords("i like this.program.very.much") ;*/
+            LastIndexOfOne R=new LastIndexOfOne();
             System.out.println();
-            System.out.println(R.lastIndex("1"));
+            System.out.println(R.lastIndex("00001"));
 
     }
 
