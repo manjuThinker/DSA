@@ -1,0 +1,28 @@
+import java.util.Arrays;
+
+public class Reversewords {
+
+    public int lastIndex( String s){
+        // int n=s.length();
+         int index=-1;
+         for(int j=0;j<n;j++) {
+             if(s.charAt(j) == '1') {
+                 index=j;
+                 System.out.println(s.charAt(j));
+             }
+           
+         }
+         return index;//
+         //the below code is the simplest method for this problem//
+         return s.lastIndexOf('1');
+     }
+
+    public static void main(String args[]){
+            Reversewords R=new Reversewords();
+            /*R.reverseWords("i like this.program.very.much") ;*/
+            System.out.println();
+            System.out.println(R.lastIndex("1"));
+
+    }
+
+}
