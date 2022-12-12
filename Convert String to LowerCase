@@ -1,0 +1,16 @@
+
+
+public class StringToLower {
+
+    public String tolower( String s) {
+        return s.toLowerCase();
+    }
+
+    public static void main(String args[]){
+            StringToLower R=new StringToLower();
+            System.out.println();
+            System.out.println(R.tolower("AAAggge"));
+
+    }
+
+}
