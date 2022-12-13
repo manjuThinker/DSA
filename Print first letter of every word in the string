@@ -1,0 +1,22 @@
+ class firstAlphabetString {
+     String firstAlphabet(String S)
+     {
+         String result="";
+         String[] s=S.split(" ");
+         for (int i=0;i<s.length;i++){
+             result=result+s[i].substring(0,1);
+         }
+         return result;
+     }
+
+
+    public static void main(String args[]) {
+        firstAlphabetString X = new firstAlphabetString();
+      /*  long [] C = {1, 2, 4, 5, 8, 10};*/
+        String B = "bad is good";
+        /*X.find(C, C.length,5);*/
+        System.out.println(X.firstAlphabet(B));
+        /*System.out.println(B.length);*/
+       /* System.out.println(X.result);*/
+    }
+}
