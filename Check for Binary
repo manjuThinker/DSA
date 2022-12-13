@@ -1,0 +1,26 @@
+public class ConatinsisBinary {
+
+    boolean isBinary(String str)
+    {
+        int result=0;
+        for (int i=0;i<str.length();i++) {
+            if (str.charAt(i) == '0'|| str.charAt(i) == '1')
+                result++;
+        }
+        if (result==str.length()){
+            return true;
+        }
+         return false;
+
+
+    }
+    public static void main(String args[]) {
+        ConatinsisBinary X = new ConatinsisBinary();
+        /*int[] C = {1, 7, 7,7,7,4, 3, 4, 8, 7};*/
+        String B = "0001001";
+        /*X.find(C, C.length,5);*/
+        System.out.println(X.isBinary(B));
+        /*System.out.println(B.length);*/
+       /* System.out.println(X.result);*/
+    }
+}
