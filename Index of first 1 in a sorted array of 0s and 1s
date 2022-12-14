@@ -1,0 +1,20 @@
+class firstIndexOfOne{
+     public long firstIndex(long arr[], long n)
+     {
+         long count=-1;
+         for (int i = 0; i <n; i++) {
+             if(arr[i]==1){
+                 count=i;
+                 break;
+             }
+         }
+         return count;
+     
+
+    public static void main(String args[]) {
+      firstIndexOfOne X = new firstIndexOfOne();
+      long [] C = {1, 1};
+      System.out.println(X.firstIndex(C, C.length));
+   
+    }
+}
