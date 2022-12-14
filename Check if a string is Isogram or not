@@ -1,0 +1,41 @@
+import java.util.Arrays;
+import java.util.HashMap;
+
+ class CheckifastringisIsogramOrNot{
+    public boolean isIsogram(String data){
+        /*for (int i = 0; i <=data.length()-1; i++) {
+            System.out.print(data.charAt(i)+" ");
+        }*/
+
+        HashMap<Character, Integer> count = new HashMap<>();
+        for (int i = 0; i<data.length(); i++) {
+            if (count.containsKey(data.charAt(i))){
+                count.put(data.charAt(i), count.get(data.charAt(i)) + 1);
+            }
+            else {
+                count.put(data.charAt(i), 0);
+            }
+        }
+        /*System.out.println(Arrays.asList(count));*/
+
+        boolean result=true;
+
+        for (int i = 0; i <data.length(); i++) {
+            if (count.containsKey(data.charAt(i))) {
+                if (count.get(data.charAt(i))> 0)
+                    result=false;
+            }
+        }
+        return result;
+    }
+
+    public static void main(String args[]) {
+        CheckifastringisIsogramOrNot X = new CheckifastringisIsogramOrNot();
+      /* int [] C = {1, 2, 3, 4};*/
+        /*String[] n={ "Geek", "Geeks", "Geeksfor", "GeeksforGeek", "GeeksforGeeks" };*/
+        String B = "pytvy";
+        /*X.find(C, C.length,5);*/
+        System.out.println(X.isIsogram(B));
+        /*System.out.println(C.length);*/
+    }
+}
