@@ -1,0 +1,22 @@
+public class CountBinaryString {
+
+    public static int binarySubstring(int a, String str)
+    {
+        int count=0;
+        for (int i=0;i<str.length();i++){
+            if(str.charAt(i)=='1'){
+                count=count+1;
+            }
+        }
+        return (count*(count-1))/2;
+    }
+    public static void main(String args[]) {
+        CountBinaryString X = new CountBinaryString();
+        /*int [] C = {4, 3, 7, 8, 6, 2, 1};*/
+        String B = "1111";
+        /*X.find(C, C.length,5);*/
+        X.binarySubstring(B.length(),B);
+        System.out.println(X.binarySubstring(B.length(),B));
+        /* System.out.println(X.result);*/
+    }
+}
