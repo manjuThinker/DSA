@@ -1,0 +1,45 @@
+import java.util.*;
+class FirstRepeatedChar {
+
+    String firstRepChar(String s)
+    {
+        /*for (int i = 0; i <=s.length()-1; i++) {
+            System.out.print(s.charAt(i)+" ");
+        }*/
+
+        HashMap<Character, Integer> count = new HashMap<>();
+        for (int i = 0; i<s.length(); i++) {
+            if (count.containsKey(s.charAt(i))){
+                count.put(s.charAt(i), count.get(s.charAt(i)) + 1);
+                break;
+            }
+            else {
+                count.put(s.charAt(i), 0);
+            }
+        }
+        System.out.println(Arrays.asList(count));
+
+        String result="-1";
+
+        for (int i = 0; i <s.length()-1; i++) {
+            if (count.containsKey(s.charAt(i))) {
+                if (count.get(s.charAt(i))==1) {
+                    result =String.valueOf(s.charAt(i));
+                    break;
+                }
+            }
+        }
+        System.out.println("result"+ " " +result);
+        return result;
+    }
+
+    public static void main(String args[]) {
+        FirstRepeatedChar X = new FirstRepeatedChar();
+     
+        String B = "evjxpnqgmvfjl";
+       
+        System.out.println();
+        System.out.println(X.firstRepChar(B));
+        
+    }
+}
