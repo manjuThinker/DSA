@@ -1,0 +1,26 @@
+import java.util.Arrays;
+
+public class Maximizesum {
+    int Maximize(int arr[], int n)
+    {
+        Arrays.sort(arr);
+        long z=0;
+        for (int i = 0; i <n; i++) {
+            z=(z+((long)arr[i])*i);
+
+        }
+        return (int) z%1000000007;
+
+    }
+
+
+    public static void main(String args[]) {
+        Maximizesum X = new Maximizesum();
+        int [] C = {5, 3, 2, 4, 1};
+        System.out.println();
+        System.out.println(X.Maximize(C,C.length));
+        /* System.out.println(X.result);*/
+    }
+
+
+}
