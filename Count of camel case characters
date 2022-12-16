@@ -1,0 +1,23 @@
+public class countCcase {
+    int countCamelCase (String s)
+    {
+        int count=0;
+       for (int i=0;i<s.length();i++){
+           if  (Character.isUpperCase(s.charAt(i))){
+               count++;
+           }
+       }
+       return count;
+    }
+
+    public static void main(String args[]) {
+        countCcase X = new countCcase();
+        /*int [] C = {4, 3, 7, 8, 6, 2, 1};*/
+        String A = "ckjkUUYII";
+        System.out.println();
+        System.out.println(X.countCamelCase(A));
+       
+    }
+
+
+}
