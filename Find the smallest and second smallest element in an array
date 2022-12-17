@@ -1,0 +1,32 @@
+import java.util.*;
+ class FindFirstAndSecondSmallest {
+
+     public long[] minAnd2ndMin(long a[], long n)
+     {
+         Arrays.sort(a);
+         long arr[]={-1,-1};
+         for (int i=1;i<a.length;i++){
+             long temp=a[0];
+             if(a[i]>temp){
+                 arr[0]=temp;
+                 arr[1]=a[i];
+                 break;
+             }
+         }
+         for (int i=0;i<arr.length;i++) {
+             System.out.print(arr[i] + " ");
+         }
+
+
+         return arr;
+         
+     }
+     
+
+     public static void main(String args[]) {
+         FindFirstAndSecondSmallest X = new FindFirstAndSecondSmallest();
+         long[] C = {5 ,11 ,1 ,6 ,6 ,8 ,11 ,5 ,12 ,11, 6, 1, 7};
+         System.out.println(X.minAnd2ndMin(C,C.length));
+
+    }
+}
