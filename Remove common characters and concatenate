@@ -1,0 +1,32 @@
+import java.util.*;
+ class Removecommoncharactersandconcatenate {
+
+     public static String concatenatedString(String s1,String s2)
+
+     {
+         String s3 = "";
+        for (int x = 0; x < s1.length(); x++) {
+             char ch = s1.charAt(x);
+             if (s2.indexOf(ch) == -1)
+                 s3 += ch;
+         }
+         for (int x = 0; x < s2.length(); x++) {
+             char ch = s2.charAt(x);
+             if (s1.indexOf(ch) == -1)
+                 s3 += ch;
+         }
+        if (s3.length() == 0)
+             return "-1";
+
+         return s3;
+
+    }
+
+     public static void main(String args[]) {
+         Removecommoncharactersandconcatenate X = new Removecommoncharactersandconcatenate();
+         String A = "enrarreilbkffrvu";
+         String B = "enrarreilbkffrvuywmmoxwejp";
+         System.out.println(X.concatenatedString(A,B));
+
+    }
+}
