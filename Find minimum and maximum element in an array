@@ -1,0 +1,45 @@
+import java.util.Arrays;
+
+public class FindMinAndMaxInArray {
+
+    class pair
+    {
+        long first, second;
+        public pair(long first, long second)
+        {
+            this.first = first;
+            this.second = second;
+        }
+    }
+        public pair getMinMax(long a[], long n)
+        {
+            pair p = new pair(Integer.MAX_VALUE , Integer.MIN_VALUE);
+
+            for(int i = 0 ; i < n ; i++){
+
+                if(a[i] < p.first ){
+
+                    p.first = a[i];
+
+                }
+
+                if(a[i] > p.second){
+
+                    p.second = a[i];
+
+                }
+
+            }
+            System.out.println(p.second);
+
+            return p;
+        }
+
+
+    public static void main(String args[]) {
+        FindMinAndMaxInArray X = new FindMinAndMaxInArray();
+        long [] C = {3, 2, 1, 56, 10000, 167};
+        System.out.println(X.getMinMax(C,C.length));
+        /* System.out.println(X.result);*/
+    }
+}
