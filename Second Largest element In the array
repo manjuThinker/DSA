@@ -1,0 +1,26 @@
+import java.util.*;
+ class SecondLargest {
+
+     int print2largest(int arr[], int n) {
+         Arrays.sort(arr);
+         int result=-1;
+         for (int i=arr.length-2;i>=0;i--){
+             if(arr[i]<arr[n-1]){
+                 result=arr[i];
+                 break;
+             }
+         }
+
+         System.out.print(result + " ");
+         return result;
+         
+     }
+     
+
+     public static void main(String args[]) {
+         SecondLargest X = new SecondLargest();
+         int[] C = {10,5,10};
+         System.out.println(X.print2largest(C,C.length));
+
+    }
+}
