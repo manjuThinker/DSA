@@ -1,0 +1,41 @@
+import java.util.*;
+ class RepeatedCharacter {
+
+     char firstRep(String S)
+     {
+        HashMap<Character, Integer> count = new HashMap<>();
+        for (int i = 0; i<S.length(); i++) {
+            if (count.containsKey(S.charAt(i))){
+                count.put(S.charAt(i), count.get(S.charAt(i)) + 1);
+            }
+            else {
+                count.put(S.charAt(i), 0);
+            }
+        }
+        /*System.out.println(Arrays.asList(count));*/
+
+        char result='#';
+
+        for (int i = 0; i <S.length(); i++) {
+            if (count.containsKey(S.charAt(i))) {
+                if (count.get(S.charAt(i))> 0) {
+                    result= S.charAt(i);
+                    break;
+                }
+
+            }
+
+
+        }
+        return result;
+
+    }
+
+     public static void main(String args[]) {
+         RepeatedCharacter X = new RepeatedCharacter();
+         String B = "hello";
+         X.getMaxOccuringChar(B);*/
+         System.out.println(X.firstRep(B));
+
+    }
+}
