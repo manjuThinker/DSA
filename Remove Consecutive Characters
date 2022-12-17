@@ -1,0 +1,25 @@
+import java.util.Arrays;
+
+public class RemoveConsecutiveCharactersString {
+    public String removeConsecutiveCharacter(String S){
+        StringBuilder sb=new StringBuilder();
+        sb.append(S.charAt(0));
+        for (int i = 1; i <S.length(); i++) {
+            char ch=sb.charAt(sb.length()-1);
+            if(S.charAt(i)!=ch){
+                sb.append(S.charAt(i));
+            }
+
+        }
+
+        return sb.toString();
+    }
+    public static void main(String args[]) {
+        RemoveConsecutiveCharactersString X = new RemoveConsecutiveCharactersString();
+        /*int [] C = {1,2,3,5};*/
+        String A = "aabaa";
+
+        System.out.println(X.removeConsecutiveCharacter(A));
+        /* System.out.println(X.result);*/
+    }
+}
