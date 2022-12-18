@@ -1,0 +1,37 @@
+import java.util.Arrays;
+
+public class AtleastTwogreaterelements {
+    public long[] findElements( long a[], long n)
+    {
+         Arrays.sort(a);
+        long result=0;
+        for (int i=a.length-1;i>=0;i--){
+            if(a[i]< a[a.length-1]){
+                result=a[i];
+                break;
+            }
+        }
+       /* System.out.println(result+" ");*/
+        long[] ele= new long[a.length-2];
+        for (int i=0;i<a.length;i++){
+            if (!(a[i] >=result)){
+                ele[i]=a[i];
+            }
+        }
+       /* for (int i=0;i<ele.length;i++){
+            System.out.print(ele[i]+" ");
+            System.out.println("length"+ ele.length+" ");
+        }*/
+
+        return ele;
+
+    }
+
+    public static void main(String args[]) {
+        AtleastTwogreaterelements X = new AtleastTwogreaterelements();
+          long[] C = {10,11,4};
+          System.out.println(X.findElements(C, C.length));
+
+    }
+}
+
