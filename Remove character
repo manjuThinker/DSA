@@ -1,0 +1,32 @@
+
+public class RemoveCharacters {
+    static String removeChars(String string1, String string2){
+        {
+            String s3 = "";
+            for (int i = 0; i < string1.length(); i++) {
+                char ch = string1.charAt(i);
+                if (string2.indexOf(ch) == -1)
+                    s3 += ch;
+            }
+            for (int i = 0; i < string2.length(); i++) {
+                char ch = string2.charAt(i);
+                if (string2.indexOf(ch) == -1)
+                    s3 += ch;
+            }
+            if (s3.length() == 0)
+                return "";
+
+            return s3;
+
+        }
+    }
+
+    public static void main(String args[]) {
+        RemoveCharacters X = new RemoveCharacters();
+        String A = "computer";
+        String B = "cat";
+        System.out.println(X.removeChars(A,B));
+
+    }
+}
+
