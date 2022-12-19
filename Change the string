@@ -1,0 +1,17 @@
+public class Changethestring {
+
+    String modify(String s){
+        if (Character.isUpperCase(s.charAt(0))){
+            return s.toUpperCase();
+        }
+        return s.toLowerCase();
+
+    }
+
+    public static void main(String args[]) {
+        Changethestring X = new Changethestring();
+         String A = "abCD";
+         System.out.println(X.modify(A));
+      
+    }
+}
