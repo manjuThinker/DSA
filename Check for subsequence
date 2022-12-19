@@ -1,0 +1,26 @@
+import java.util.Arrays;
+
+public class Checkforsubsequence {
+
+    boolean isSubSequence(String A, String B){
+        int n = A.length(), m = B.length();
+        int i = 0, j = 0;
+        while (i < n && j < m) {
+            if (A.charAt(i) == B.charAt(j))
+                i++;
+            j++;
+        }
+        return i == n;
+
+    }
+
+
+
+    public static void main(String args[]) {
+        Checkforsubsequence X = new Checkforsubsequence();
+        String A = "AXY";
+        String B="YADXCP";
+        System.out.println(X.isSubSequence(A,B));
+        
+    }
+}
