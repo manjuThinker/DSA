@@ -1,0 +1,32 @@
+import java.util.Arrays;
+
+public class RedORGreenColor {
+
+    public int RedOrGreen(int N, String S) {
+        int red=0;
+        int green=0;
+        int i=0;
+        while(i<S.length()){
+            if (S.charAt(i)=='R')
+                red++;
+            if(S.charAt(i)=='G')
+                green++;
+            i++;
+        }
+        if (red<green){
+            return red;
+        }
+        return green;
+
+    }
+
+
+
+
+    public static void main(String args[]) {
+        RedORGreenColor X = new RedORGreenColor();
+          String A = "GGGGGGR";
+         System.out.println(X.RedOrGreen(A.length(),A));
+       
+    }
+}
