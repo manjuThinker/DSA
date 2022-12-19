@@ -1,0 +1,34 @@
+
+
+public class SumOfNumberInString {
+
+    long findSum(String str)
+    {
+        String res="";
+        long sum=0;
+        for(int i=0; i<str.length();i++){
+            if(Character.isDigit(str.charAt(i))){
+                res+=str.charAt(i);
+            }
+            else {
+                if(res.length()!=0){
+                    sum=sum+Long.parseLong(res);
+                    res="";
+                }
+            }
+        }
+        if(res.length()!=0)
+            sum=sum+Long.parseLong(res);
+
+        return sum;
+    }
+
+
+
+    public static void main(String args[]) {
+        SumOfNumberInString X = new SumOfNumberInString();
+         String A = "1abc23";
+        System.out.println(X.findSum(A));
+     
+    }
+}
