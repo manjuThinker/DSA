@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+
+
+public class Subarraywithgivensum {
+    static ArrayList<Integer> subarraySum(int[] arr, int n, int s)
+    {
+        ArrayList<Integer> al=new ArrayList<>();
+        for (int i=0;i<n;i++) {
+            int temp = arr[i];
+            if (temp==s) {
+                al.add(i+1);
+                al.add(i+1);
+                return al;
+            }
+            else
+            {
+                for (int j = i+1; j < n; j++) {
+                    temp = temp + arr[j];
+                    if (temp==s) {
+                        al.add(i + 1);
+                        al.add(j + 1);
+                        return al;
+                    }
+
+                }
+            }
+        }
+
+        if(al.size()==0) {
+            al.add(-1);
+        }
+        return al;
+
+    }
+
+    public static void main(String args[]) {
+        Subarraywithgivensum X = new Subarraywithgivensum();
+        int [] C = {1,2,3,7,5};
+        System.out.println(X.subarraySum(C,C.length-1,12));
+     
+    }
+}
