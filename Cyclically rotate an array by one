@@ -1,0 +1,21 @@
+
+public class Cyclicallyrotateanarraybyone {
+    void rotate(int arr[], int n)
+    {
+        arr[0]=arr[n-1];
+        for (int i=1;i<n;i++){
+            int temp=arr[i];
+            arr[i]=arr[n-1];
+            arr[n-1]=temp;
+        }
+
+    }
+
+
+    public static void main(String args[]) {
+        Cyclicallyrotateanarraybyone X = new Cyclicallyrotateanarraybyone();
+        int [] C = {1, 2, 3, 4, 5};
+        X.rotate(C,C.length-1);
+        
+        }
+}
