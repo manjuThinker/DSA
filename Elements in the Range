@@ -1,0 +1,28 @@
+
+import java.util.HashSet;
+
+
+public class ElementsintheRange {
+    boolean check_elements(int arr[], int n, int A, int B) {
+        HashSet<Integer> set=new HashSet<>();
+        for(int item:arr) {
+
+            set.add(item);
+        }
+
+        for(int i=A;i<=B;i++) {
+
+            if (!set.contains(i))
+                return false;
+        }
+
+        return true;
+    }
+
+
+    public static void main(String args[]) {
+        ElementsintheRange X = new ElementsintheRange();
+        int [] C = {1, 4, 5, 2, 7, 8, 3};
+         System.out.println(X.check_elements(C,C.length-1,2,5));
+    }
+}
