@@ -1,0 +1,8 @@
+------------Simple two line solution------------------
+
+class Solution{
+    long maxDays(long arr[], int n){
+         Arrays.sort(arr);
+         return  arr[n-1];
+    }
+}
