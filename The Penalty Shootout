@@ -1,0 +1,21 @@
+import java.util.*;
+ class ThePenaltyShootout {
+
+     public int penaltyScore(String S)
+     {
+         int result=0;
+         for (int i=0;i<S.length()-1;i++){
+             if(S.charAt(i)=='2' && S.charAt(i+1)=='1')
+                 result++;
+         }
+         return result;
+     }
+
+
+     public static void main(String args[]) {
+         ThePenaltyShootout X = new ThePenaltyShootout();
+         String A = "111122";
+         System.out.println(X.penaltyScore(A));
+
+    }
+}
