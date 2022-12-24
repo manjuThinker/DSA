@@ -30,4 +30,4 @@ import java.util.*;
          System.out.println(X.findDuplicate(C,C.length,1));
 
      }
-}
+} 
