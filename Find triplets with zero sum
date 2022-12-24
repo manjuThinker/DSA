@@ -1,0 +1,29 @@
+import java.util.*;
+ class Findtripletswithzerosum {
+
+     public boolean findTriplets(int arr[] , int n)
+     {
+         Arrays.sort(arr);
+         for(int i =0;i<n;i++){
+             int j=i+1,k=n-1;
+             while(j<k){
+                 int sum=arr[i]+arr[j]+arr[k];
+                 if(sum==0)
+                     return true;
+                 if(sum>0)
+                    k--;
+                 else
+                     j++;
+             }
+         }
+
+         return false;
+
+ }
+     public static void main(String args[]) {
+         Findtripletswithzerosum X = new Findtripletswithzerosum();
+          int[] C = {1,2,3,4,4};
+          System.out.println(X.findTriplets(C,C.length-1));
+
+     }
+}
