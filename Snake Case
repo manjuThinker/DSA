@@ -1,0 +1,13 @@
+import java.util.*;
+ class SnakeCaseConversion {
+     static String snakeCase(String S , int n) {
+         return S.toLowerCase().replaceAll(" ","_");
+     }
+
+     public static void main(String args[]) {
+         SnakeCaseConversion X = new SnakeCaseConversion();
+         String A = "Geeks ForGeeks";
+         System.out.println(X.snakeCase(A,A.length()));
+
+     }
+}
