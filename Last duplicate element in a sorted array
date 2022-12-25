@@ -1,0 +1,24 @@
+import java.util.*;
+ class LastDuplicateElementInSortedArray {
+     public static ArrayList<Integer> dupLastIndex (int arr[], int n) {
+         ArrayList<Integer> al=new ArrayList<>();
+         for (int i=n-1;i>=0;i--){
+             if (arr[i]==arr[i-1]){
+                 al.add(i);
+                 al.add(arr[i]);
+                 break;
+             }
+         }
+         if (al.size()==0){
+             al.add(-1);
+         }
+         return al;
+     }
+
+     public static void main(String args[]) {
+         LastDuplicateElementInSortedArray X = new LastDuplicateElementInSortedArray();
+         int[] C = {1, 5, 5, 6, 6, 7};
+         System.out.println(X.dupLastIndex(C,C.length));
+
+     }
+}
