@@ -1,0 +1,25 @@
+import java.util.*;
+ class Sumofdistinctelementsforalimitedrange {
+     long sumOfDistinct(long arr[], int N)
+     {
+         HashSet<Long> hs=new HashSet<>();
+         for (int i=0;i<N;i++){
+             hs.add(arr[i]);
+         }
+         Long[] temp=hs.toArray(new Long[hs.size()]);
+         long sum=0;
+         for (int i=0;i<temp.length;i++){
+            sum=sum+temp[i];
+         }
+         /* System.out.println(sum);*/
+         return 1;
+
+     }
+
+     public static void main(String args[]) {
+         Sumofdistinctelementsforalimitedrange X = new Sumofdistinctelementsforalimitedrange();
+         long[] C = {1,1,1};
+         System.out.println(X.sumOfDistinct(C,C.length));
+
+     }
+}
