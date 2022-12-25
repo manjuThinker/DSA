@@ -1,0 +1,41 @@
+import java.util.*;
+ class Differencebetweenhighestandlowestoccurrence {
+     public long findDiff(long arr[], long n)
+     {
+         long temp=1;
+         HashMap<Long, Long> count = new HashMap<>();
+         for (int i = 0; i<n; i++) {
+             if (count.containsKey(arr[i])){
+                 count.put(arr[i], count.get(arr[i])+ 1);
+             }
+             else {
+                 count.put((arr[i]), temp);
+             }
+         }
+       /*  System.out.println(Arrays.asList(count));*/
+         long max=0;
+         long min=Long.MAX_VALUE;
+         for (int i = 0; i<n; i++){
+             if (count.get(arr[i])>max){
+                 max=count.get(arr[i]);
+             }
+             if (count.get(arr[i])<min){
+                 min=count.get(arr[i]);
+             }
+         }
+         if (count.size()==1){
+             return 0;
+         }
+       /*  System.out.println("max   "+max+"    "+"min     "+min);*/
+
+
+         return max-min;
+
+     }
+     public static void main(String args[]) {
+         Differencebetweenhighestandlowestoccurrence X = new Differencebetweenhighestandlowestoccurrence();
+         long[] C = {2, 2, 2};
+         System.out.println(X.findDiff(C,C.length));
+
+     }
+}
