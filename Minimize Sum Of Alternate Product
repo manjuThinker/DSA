@@ -1,0 +1,25 @@
+import java.util.*;
+ class MinimizeSumOfAlternateProduct {
+     public long altProduct(long arr[], long n)
+     {
+         long result=0;
+        Arrays.sort(arr);
+        int i=0;
+        int j=(int) n-1;
+        while (i<j){
+            result=result+(arr[i]*arr[j]);
+            i++;
+            j--;
+
+        }
+        return result;
+     }
+
+
+     public static void main(String args[]) {
+         MinimizeSumOfAlternateProduct X = new MinimizeSumOfAlternateProduct();
+         long[] C = {9 ,2 ,8, 4 ,5, 7 ,6 ,0};
+         System.out.println(X.altProduct(C,C.length));
+
+     }
+}
