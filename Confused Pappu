@@ -1,0 +1,16 @@
+import java.util.*;
+ class ConfusedPappu {
+     long findDiff(long amount)
+     {
+         String temp=""+amount;
+         temp=temp.replaceAll("6","9");
+         return Long.parseLong(temp)-amount;
+     }
+
+     public static void main(String args[]) {
+         ConfusedPappu X = new ConfusedPappu();
+         long A = 66;
+         System.out.println(X.findDiff(A));
+
+     }
+}
