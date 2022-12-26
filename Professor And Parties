@@ -1,0 +1,21 @@
+import java.util.*;
+ class ProfessorAndParties {
+     public static String PartyType( long a[], int n)
+     {
+         HashSet<Long> hs=new HashSet<>();
+         for (int i=0;i<n;i++){
+             hs.add(a[i]);
+         }
+         if(hs.size()==n){
+             return "GIRLS";
+         }
+         return "BOYS";
+
+     }
+     public static void main(String args[]) {
+         ProfessorAndParties X = new ProfessorAndParties();
+         long[] C = {1, 2, 3, 4, 7,7};
+         System.out.println(X.PartyType(C,C.length));
+
+     }
+}
