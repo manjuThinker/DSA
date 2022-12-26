@@ -1,0 +1,29 @@
+import java.util.*;
+ class ArrangingTheArray {
+     public void Rearrange(long a[], long n)
+     {
+         ArrayList<Long> positive=new ArrayList<>();
+         ArrayList<Long> negative=new ArrayList<>();
+         for (int i=0;i<n;i++) {
+             if (a[i]<0){
+                 negative.add(a[i]);
+             }
+             else positive.add(a[i]);
+
+         }
+         negative.addAll(positive);
+         long count = 0;
+         for(long y : negative) {
+             a[(int) count++] = y;
+         }
+     }
+     public static void main(String args[]) {
+         ArrangingTheArray X = new ArrangingTheArray();
+         long[] C = {2, -4, 7, -3, 4};
+         X.Rearrange(C,C.length);
+         for (int i=0;i<C.length;i++){
+             System.out.print(C[i]+", ");
+         }
+
+     }
+}
