@@ -1,0 +1,18 @@
+import java.util.*;
+ class PlayWithOR {
+     public static int[] game_with_number (int arr[], int n) {
+         for(int i = 0 ; i < n - 1; i++){
+             arr[i] = arr[i] | arr[i + 1];
+         }
+
+         return arr;
+     }
+     public static void main(String args[]) {
+         PlayWithOR X = new PlayWithOR();
+         int[] C = {10, 11, 1, 2, 3};
+         System.out.println(X.game_with_number(C,C.length));
+         for(int i = 0 ; i < C.length ; i++){
+            System.out.print(C[i]+"  ");
+         }
+     }
+}
