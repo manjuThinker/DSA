@@ -1,0 +1,29 @@
+import java.util.*;
+ class PythagoreanTriplet {
+     boolean checkTriplet(int[] arr, int n) {
+
+         for (int i = 0; i < n; i++) {
+             for (int j = i+1; j < n; j++){
+                 for (int k = j+1; k < n; k++){
+                     int a=arr[i]*arr[i];
+                     int b=arr[j]*arr[j];
+                     int c=arr[k]*arr[k];
+                     if (a==b+c|| b==a+c ||c==a+b){
+                         return true;
+                     }
+                 }
+             }
+
+         }
+
+
+         return false;
+
+     }
+     public static void main(String args[]) {
+         PythagoreanTriplet X = new PythagoreanTriplet();
+         int[] C = {3, 8, 5};
+         System.out.println(X.checkTriplet(C,C.length-1));
+
+     }
+}
