@@ -1,0 +1,30 @@
+import java.util.*;
+ class RemoveRepeatedDigitsInAGivenNumber {
+     public long modify(long N)
+     {
+         String s = "" + N;
+         String s1 = "";
+         if (s.length() > 0) {
+             s1 += s.charAt(0);
+         }
+
+         for (int i = 0, j = 1; j < s.length(); j++) {
+             if (s.charAt(j) != s.charAt(i)) {
+                 s1 = s1 + s.charAt(j);
+                 i = j;
+             }
+         }
+
+
+         //System.out.println(s1);
+         return Long.parseLong(s1);
+     }
+
+     public static void main(String args[]) {
+         RemoveRepeatedDigitsInAGivenNumber X = new RemoveRepeatedDigitsInAGivenNumber();
+         long A = 1224;
+         System.out.println(X.modify(A));
+        
+
+     }
+}
