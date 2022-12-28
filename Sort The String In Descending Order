@@ -1,0 +1,18 @@
+import java.util.*;
+ class SortTheStringInDescendingOrder {
+     String ReverseSort(String str)
+     {
+         char[] c = str.toCharArray();
+         Arrays.sort(c);
+         String s1 = String.copyValueOf(c);
+         StringBuilder sb=new StringBuilder(s1);
+         sb.reverse();
+         return sb.toString();
+     }
+
+     public static void main(String args[]) {
+         SortTheStringInDescendingOrder X = new SortTheStringInDescendingOrder();
+         String A = "for";
+         System.out.println(X.ReverseSort(A));
+     }
+}
