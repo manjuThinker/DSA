@@ -1,0 +1,30 @@
+import java.util.*;
+ class FindKthCharacterInString {
+     char kthCharacter(int m, int n, int k) {
+         String s=Integer.toBinaryString(m);
+         int z=s.length();
+         while (n!=0) {
+             String s1 = "";
+             for (int i = 0; i < z; i++) {
+                 if (s.charAt(i) == '0') {
+                     s1 = s1 + "01";
+                 }
+                 else  {
+                     s1 = s1 + "10";
+                 }
+             }
+             s = s1;
+             z=s1.length();
+             n--;
+         }
+
+          /*   System.out.println(s);*/
+
+         return (s.charAt(k-1));
+
+     }
+     public static void main(String args[]) {
+         FindKthCharacterInString X = new FindKthCharacterInString();
+         System.out.println(X.kthCharacter(5,2,1));
+       }
+}
