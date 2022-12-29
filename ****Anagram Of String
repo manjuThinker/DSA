@@ -1,0 +1,32 @@
+import java.util.*;
+ class AnagramOfString {
+     public int remAnagrams(String s,String s1)
+     {
+         HashMap<Character, Integer> count = new HashMap<>();
+         for (int i = 0; i<s.length(); i++) {
+                 count.put(s.charAt(i), count.getOrDefault(s.charAt(i),0)+ 1);
+             }
+
+         for (int i = 0; i<s1.length(); i++) {
+                 count.put(s1.charAt(i), count.getOrDefault(s1.charAt(i),0)- 1);
+             }
+
+         System.out.println(Arrays.asList(count));
+         int result=0;
+         for (Map.Entry<Character,Integer> entry: count.entrySet()){
+             result+= Math.abs(entry.getValue());
+         }
+
+         return result;
+
+     }
+
+     public static void main(String args[]) {
+         AnagramOfString X = new AnagramOfString();
+         String A = "basgadhbfgvhads";
+         String B = "sjdhgvbjdsbhvbvd";
+         System.out.println(X.remAnagrams(A,B));
+         
+
+     }
+}
