@@ -1,0 +1,27 @@
+import java.util.*;
+ class ReverseSubArray {
+     void reverseSubArray(int arr[], int n, int l, int r) {
+         int i=l-1;
+         int j=r-1;
+         while (i<j) {
+             int temp=arr[i];
+             arr[i]=arr[j];
+             arr[j]=temp;
+             i++;
+             j--;
+
+         }
+         for (int z=0;z<arr.length;z++) {
+             System.out.print(arr[z]+" ");
+         }
+
+
+     }
+
+     public static void main(String args[]) {
+         ReverseSubArray X = new ReverseSubArray();
+         int[] C = {1, 6, 7, 4};
+         X.reverseSubArray(C,C.length,1,4);
+        
+     }
+}
