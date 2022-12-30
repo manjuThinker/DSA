@@ -1,0 +1,29 @@
+import java.util.*;
+class JavaOneDand2DArray {
+
+    public static ArrayList<Integer> array(int a[][], int b[], int n)
+    {
+        ArrayList<Integer> al=new ArrayList<>();
+        int sum=0;
+        for (int i=0;i<n;i++){
+            for (int j=0;j<n;j++){
+                if(i==j){
+                    sum+=(a[i][j]);
+                }
+            }
+        }
+        al.add(sum);
+        Arrays.sort(b);
+        al.add(b[b.length-1]);
+
+        return al;
+    }
+
+    public static void main(String args[]) {
+        JavaOneDand2DArray X = new JavaOneDand2DArray();
+        int [][]C = {{1,2}, {1, 2}};
+        int[] B={10,1};
+        System.out.println(X.array(C,B,C.length));
+       
+    }
+}
