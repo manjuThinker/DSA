@@ -1,0 +1,39 @@
+import java.math.BigInteger;
+import java.util.*;
+class MaximumTripletSumInArray {
+
+    int maxTripletSum(int a[], int n)
+    {
+        int result = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                for (int k = j + 1; k < n; k++) {
+                    int temp = a[i] + a[j] + a[k];
+                    if (temp > result) {
+                        result = temp;
+                    }
+                }
+            }
+        }
+
+        return result;
+    }
+    //the above method only works for positive integers
+    
+    
+    // Altrernate solution for both  +ve and -ve values
+    int maxTripletSum2(int a[], int n)
+    {
+       Arrays.sort(a);
+      int sum=a[n-1]+a[n-2]+a[n-3];
+      return sum;
+    }
+
+    public static void main(String args[]) {
+        MaximumTripletSumInArray X = new MaximumTripletSumInArray();
+        int[] C = {1, 0, 8, 6, 4, 2};
+        System.out.println();
+        System.out.println(X.maxTripletSum(C,C.length));
+      
+      }
+}
