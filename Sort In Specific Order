@@ -1,0 +1,38 @@
+
+import java.util.*;
+class SortInSpecificOrder {
+
+
+    public void sortIt(long arr[], long n)
+    {
+    // sorting array to arrange descending order of odd number 
+        Arrays.sort(arr);
+        int len = arr.length;
+        int s = 0;
+        int e = len-1;
+  //temporay array clone of arr to modify the original array      
+        long [] temp=arr.clone();
+  //function to arrange the largest to smallest odd numbers first and smallest to largest even number next      
+        for(int i = len-1 ; i >= 0 ; i-- ){
+            if( (temp[i]%2)!= 0 ){
+                arr[s] = temp[i];
+                s++;
+            }
+            else{
+                arr[e] = temp[i];
+                e--;
+            }
+        }
+
+// printing the rearranfed array to confirm
+        for (int i=0;i<n;i++){
+            System.out.print("  "+arr[i]);
+        }
+    }
+
+    public static void main(String args[]) {
+        SortInSpecificOrder X = new SortInSpecificOrder();
+        long[] C = {1, 2, 3, 5, 4, 7, 10};
+        X.sortIt(C,C.length);
+    }
+}
