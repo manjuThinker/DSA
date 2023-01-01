@@ -1,0 +1,18 @@
+
+import java.util.*;
+class LengthOfLastWord {
+
+
+    int findLength(String s)
+    {
+        String[] temp=s.split(" ");
+        return temp[temp.length-1].length();
+    }
+
+    public static void main(String args[]) {
+        LengthOfLastWord X = new LengthOfLastWord();
+        String A = "Geeks for Geeks";
+        System.out.println(X.findLength(A));
+      
+    }
+}
