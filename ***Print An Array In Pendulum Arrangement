@@ -34,4 +34,4 @@ import java.util.*;
          X.pendulumArrangement(C,C.length);
 
      }
-}
+} 
