@@ -1,0 +1,26 @@
+
+import java.util.*;
+class RockPaperScissors {
+
+
+    String gameResult(String s)
+    {
+        if (s.charAt(0) == s.charAt(1)) {
+
+            return "DRAW";
+        } else if (s.charAt(0) == 'R' && s.charAt(1)=='S'||
+                s.charAt(0) == 'S' && s.charAt(1)=='P'||
+                s.charAt(0) == 'P' && s.charAt(1)=='R') {
+            return "A";
+            
+        }
+        else return "B";
+    }
+
+    public static void main(String args[]) {
+        RockPaperScissors X = new RockPaperScissors();
+        String A = "RS";
+        System.out.println(X.gameResult(A));
+     
+    }
+}
