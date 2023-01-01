@@ -1,0 +1,27 @@
+import java.util.*;
+
+
+public class DivisibleBy7 {
+
+    int isdivisible7(String num){
+
+        int n = 0;
+        for (int i = 0; i < num.length(); i++) {
+            n = n * 10 + (num.charAt(i) - '0');
+            n = n % 7;
+        }
+
+        if (n % 7 == 0) {
+            return 1;
+        }
+        return 0;
+    }
+
+
+    public static void main(String args[]) {
+        DivisibleBy7 X = new DivisibleBy7();
+         String A = "8955795758";
+         System.out.println(X.isdivisible7(A));
+
+    }
+}
