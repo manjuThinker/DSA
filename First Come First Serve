@@ -1,0 +1,32 @@
+import java.util.Arrays;
+
+import java.util.*;
+ class FirstComeFirstServe {
+
+    static int firstElement(int arr[], int n, int k) { 
+
+         LinkedHashMap<Integer, Integer> count = new LinkedHashMap<>();
+         for (int i = 0; i < n; i++) {
+             count.put(arr[i], count.getOrDefault((arr[i]), 0) + 1);
+
+         }
+         int result = -1;
+         for (Map.Entry<Integer, Integer> entry : count.entrySet()) {
+             if (entry.getValue() == k) {
+                 result = entry.getKey();
+                 break;
+             }
+         }
+         return result;
+     }
+
+
+    public static void main(String args[]) {
+        FirstComeFirstServe X = new FirstComeFirstServe();
+        int [] C = {4, 1, 6, 1, 6, 4};
+        System.out.println(X.maxRepeating(C,C.length,1));
+   
+    }
+
+
+}
