@@ -1,0 +1,26 @@
+import java.util.*;
+
+
+public class CheckIfDivisibleBy11 {
+//string may consist numbers that may overflow the data type when you directly compare with logical operator
+    int divisibleBy11 (String S) {
+        int n = 0;
+        for (int i = 0; i < S.length(); i++) {
+            n = n * 10 + (S.charAt(i) - '0');
+            n = n % 11;
+        }
+
+        if (n % 11 == 0) {
+            return 1;
+        }
+        return 0;
+    }
+
+
+    public static void main(String args[]) {
+        CheckIfDivisibleBy11 X = new CheckIfDivisibleBy11();
+         String A = "76945";
+         System.out.println(X.divisibleBy11(A));
+
+     }
+}
