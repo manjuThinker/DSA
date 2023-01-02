@@ -1,0 +1,27 @@
+import java.util.*;
+
+
+public class SortAnArrayOf0s1sAnd2s {
+
+    public static void sort012(int a[], int n)
+    {
+        int[] temp=a.clone();
+        Arrays.sort(temp);
+        for (int i=0;i<temp.length;i++){
+            a[i]=temp[i];
+        }
+        
+        //output reference
+        for (int i=0;i<n;i++){
+            System.out.print("   "+a[i]);
+        }
+    }
+
+
+    public static void main(String args[]) {
+        SortAnArrayOf0s1sAnd2s X = new SortAnArrayOf0s1sAnd2s();
+        int [] C = {0,2 ,1, 2, 0};
+        X.sort012(C,C.length);
+   
+    }
+}
