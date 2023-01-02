@@ -1,0 +1,25 @@
+import java.util.*;
+
+
+public class Remainderwith7 {
+
+     int remainderWith7(String num)
+    {
+         int n = 0;
+        for (int i = 0; i < num.length(); i++) {
+            n = n * 10 + (num.charAt(i) - '0');
+            n = n % 7;
+        }
+
+       return n;
+    }
+}
+
+
+    public static void main(String args[]) {
+        Remainderwith7 X = new Remainderwith7();
+        String A = "8955795758";
+       System.out.println(X.isdivisible7(A));
+
+    }
+}
