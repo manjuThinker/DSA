@@ -1,0 +1,35 @@
+import java.util.Arrays;
+
+import java.util.*;
+ class NonRepeatingCharacters {
+
+     static char nonrepeatingCharacter(String S)
+     {
+         LinkedHashMap<Character,Integer> m=new LinkedHashMap<>();
+         int n=S.length();
+         for(int i=0;i<n;i++){
+             if (m.containsKey(S.charAt(i))){
+                 m.put(S.charAt(i),m.get(S.charAt(i))+1);
+             }
+             else
+             m.put(S.charAt(i),0);
+         }
+        
+       for (Map.Entry<Character,Integer> entry:m.entrySet()){
+           if (entry.getValue()==0){
+               return entry.getKey();
+           }
+       }
+       return '$';
+     }
+
+
+    public static void main(String args[]) {
+        NonRepeatingCharacters X = new NonRepeatingCharacters();
+        String A = "hello";
+        System.out.println(X.nonrepeatingCharacter(A));
+     
+    }
+
+
+}
