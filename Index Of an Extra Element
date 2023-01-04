@@ -1,0 +1,28 @@
+import java.util.*;
+
+
+public class IndexOfanExtraElement {
+
+    public int findExtra(int a[], int b[], int n) {
+        int i=0;
+        while(i<n-1){
+            if(a[i]!=b[i]){
+                return i;
+            }
+            else{
+
+                i++;
+            }
+
+        }
+        return i;
+    }
+
+    public static void main(String args[]) {
+        IndexOfanExtraElement X = new IndexOfanExtraElement();
+        int [] C = {2,4,6,8,9,10,12};
+        int []B={2,4,6,8,10,12};
+        System.out.println(X.findExtra(C,B,C.length));
+     
+    }
+}
