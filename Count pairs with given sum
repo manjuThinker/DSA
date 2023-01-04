@@ -1,0 +1,46 @@
+import java.util.*;
+
+
+public class Countpairswithgivensum {
+
+    int getPairsCount(int[] arr, int n, int k) {
+        int ans = 0;
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for(int i = 0;i<n ;i++){
+            if(map.containsKey(k-arr[i])){
+                ans+= map.get(k-arr[i]);
+            }
+            if(map.containsKey(arr[i])){
+                map.put(arr[i],map.get(arr[i])+1);
+            }
+            else{
+                map.put(arr[i],1);
+
+            }
+
+        }
+       // System.out.print(Arrays.asList(map));
+
+        return ans;
+    }
+    
+    //method 2 O(logn) pick any either method
+    int getPairsCount(int[] arr, int n, int k) {
+        int count=0;
+       for (int i=0;i<n;i++){
+           for (int j=i+1;j<n;j++){
+               if(arr[i]+arr[j]==k){
+                   count++;
+               }
+           }
+       }
+       return count;
+    }
+
+    public static void main(String args[]) {
+        Countpairswithgivensum X = new Countpairswithgivensum();
+        int [] C = {1, 1, 1, 1};
+        System.out.println(X.getPairsCount(C,C.length,2));
+  
+    }
+}
