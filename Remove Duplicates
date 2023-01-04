@@ -1,0 +1,29 @@
+import java.util.*;
+
+
+public class RemoveDuplicates {
+
+    String removeDups(String S) {
+        String result="";
+        LinkedHashMap<Character,Integer> map = new LinkedHashMap<>();
+        for(int i = 0;i<S.length() ;i++){
+            if(map.containsKey(S.charAt(i))){
+                continue;
+            }
+            else{
+                map.put(S.charAt(i),1);
+                result+=S.charAt(i);
+            }
+
+        }
+        // System.out.print(Arrays.asList(map));
+
+        return result;
+    }
+
+    public static void main(String args[]) {
+        RemoveDuplicates X = new RemoveDuplicates();
+        String B="gfg";
+        System.out.println(X.removeDups(B));
+     }
+}
