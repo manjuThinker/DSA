@@ -1,0 +1,24 @@
+import java.util.*;
+
+
+public class ReverseAStringUsingStack {
+
+    public String reverse(String S){
+     Stack<Character>st=new Stack<>();
+      for (int i=0;i<S.length();i++){
+           st.push(S.charAt(i));
+       }
+       String result="";
+      int i=0;
+        while (i < st.size()) {
+            result+=st.pop();
+        }
+        return result;
+    }
+
+    public static void main(String args[]) {
+        ReverseAStringUsingStack X = new ReverseAStringUsingStack();
+        String A = "geeksforgeeks";
+        System.out.println(X.reverse(A));
+    }
+}
