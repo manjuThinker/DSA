@@ -1,0 +1,26 @@
+import java.util.*;
+
+
+public class PeakElement {
+
+    public int peakElement(int[] arr,int n)
+    {
+        int count=0;
+        int index=0;
+        for(int i=0;i<n;i++){
+            if((arr[i]>=count)){
+                count=arr[i];
+                index=i;
+            }
+
+        }
+        return index;
+
+    }
+    public static void main(String args[]) {
+        PeakElement X = new PeakElement();
+        int [] C = {1,2,3};
+        System.out.println(X.peakElement(C, C.length));
+    
+    }
+}
