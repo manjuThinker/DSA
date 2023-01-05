@@ -1,0 +1,31 @@
+import java.util.*;
+
+
+public class KeyPair {
+
+    boolean hasArrayTwoCandidates(int arr[], int n, int x) {
+       Arrays.sort(arr);
+       int i=0;
+       int j=n-1;
+       while (i<j) {
+           if (arr[i] + arr[j] == x) {
+               return true;
+           }
+           if (arr[i] + arr[j] < x) {
+               i++;
+           }
+           if (arr[i] + arr[j] > x) {
+               j--;
+
+           }
+       }
+        return false;
+
+    }
+    public static void main(String args[]) {
+        KeyPair X = new KeyPair();
+        int [] C = {1, 4, 45, 6, 10, 8};
+        System.out.println(X.hasArrayTwoCandidates(C,C.length,16));
+     
+    }
+}
