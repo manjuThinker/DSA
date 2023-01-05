@@ -1,0 +1,32 @@
+import java.util.*;
+
+
+public class FirstRepeatingElement {
+//optimized
+    public static int firstRepeated(int[] arr, int n) {
+        LinkedHashMap<Integer, Integer> count = new LinkedHashMap<>();
+        int first = Integer.MAX_VALUE;
+        for (int i = 0; i < n; i++) {
+            if (count.containsKey(arr[i])) {
+                if (count.get(arr[i]) < first) {
+                    first = count.get(arr[i]);
+                }
+            } else {
+                count.put(arr[i], i);
+            }
+        }
+
+        if (first < 0 || first == Integer.MAX_VALUE) {
+            return -1;
+        }
+
+        return first + 1;
+    }
+
+    public static void main(String args[]) {
+        FirstRepeatingElement X = new FirstRepeatingElement();
+        int [] C = {1, 5, 3, 4, 3, 5, 6};
+        System.out.println(X.firstRepeated(C,C.length));
+      
+    }
+}
