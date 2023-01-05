@@ -1,0 +1,24 @@
+import java.util.*;
+
+
+public class ReverseWordsInAGivenString {
+
+    String reverseWords(String S)
+    {
+        String[] temp=S.split("\\.");
+        String result="";
+        result=temp[temp.length-1];
+        for (int i= temp.length-2;i>=0;i--){
+            result+="."+temp[i];
+            /*System.out.print(temp[i]+ " ");*/
+        }
+        return result;
+
+    }
+    public static void main(String args[]) {
+        ReverseWordsInAGivenString X = new ReverseWordsInAGivenString();
+        String A = "pqr.mno";
+        System.out.println(X.reverseWords(A));
+   
+    }
+}
