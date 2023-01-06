@@ -1,0 +1,31 @@
+import java.util.*;
+public class MoveAllNegativeElementsToEnd {
+
+    public void segregateElements(int arr[], int n) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        ArrayList<Integer> zeros = new ArrayList<>();
+        for (int i : arr) {
+            if (i >= 0) {
+                numbers.add(i);
+            } else {
+                zeros.add(i);
+            }
+        }
+        numbers.addAll(zeros);
+        int z = 0;
+        for (int x : numbers) {
+            arr[z++] = x;
+        }
+//output reference
+        for (int t = 0; t < arr.length; t++) {
+            System.out.print(" " + arr[t]);
+        }
+
+    }
+    public static void main(String args[]) {
+        MoveAllNegativeElementsToEnd X = new MoveAllNegativeElementsToEnd();
+        int [] C = {1, -1, 3, 2, -7, -5, 11, 6};
+        X.segregateElements(C,C.length);
+      
+    }
+}
