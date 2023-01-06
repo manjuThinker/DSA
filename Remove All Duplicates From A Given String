@@ -1,0 +1,22 @@
+import java.util.*;
+
+
+public class missingNumber {
+    String removeDuplicates(String str) {
+        LinkedHashSet<Character> count=new LinkedHashSet<>();
+        for(int i=0;i<str.length();i++){
+            count.add(str.charAt(i));
+        }
+        String result="";
+        for (char c:count){
+                result+=c;
+            }
+
+        return result;
+    }
+    public static void main(String args[]) {
+       RemoveAllDuplicatesFromAGivenString X = new RemoveAllDuplicatesFromAGivenString();
+       String A = "geeksforgeeks";
+       System.out.println(X.removeDuplicates(A));
+    }
+}
