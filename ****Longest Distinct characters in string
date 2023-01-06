@@ -1,0 +1,35 @@
+import java.sql.Array;
+import java.util.*;
+
+
+public class LongestDistinctCharactersInString {
+
+
+    static int longestSubstrDistinctChars(String S){
+        int max=Integer.MIN_VALUE;
+        ArrayList<Character> a=new ArrayList<>();
+        for(int i=0;i<S.length();i++){
+            for(int j=i;j<S.length();j++){
+                if(!a.contains(S.charAt(j))){
+                    a.add(S.charAt(j));
+                    System.out.println(a);
+                }
+                else{
+                    break;
+                }
+            }
+            if(a.size()>max){
+                max=a.size();
+            }
+            a.clear();
+        }
+
+        return max;
+    }
+    public static void main(String args[]) {
+        LongestDistinctCharactersInString X = new LongestDistinctCharactersInString();
+        String A = "aldshflasghdfasgfkhgasdfasdgvfyweofyewyrtyefgv";
+        System.out.println(X.longestSubstrDistinctChars(A));
+   
+    }
+}
