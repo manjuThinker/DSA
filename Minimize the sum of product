@@ -1,0 +1,24 @@
+import java.util.*;
+
+
+public class Minimizethesumofproduct {
+    public long minValue(long a[], long b[], long n)
+    {
+        Arrays.sort(a);
+        Arrays.sort(b);
+        long result=0;
+        long i=0;
+        long j= (n-1);
+       while (i<n){
+           result+=a[(int) i]*b[(int) j];
+           i++;j--;
+    }
+       return result;
+    }
+    public static void main(String args[]) {
+        Minimizethesumofproduct X = new Minimizethesumofproduct();
+        long [] C={3, 1, 1};
+        long B[] = {6, 5, 4};
+        System.out.println(X.minValue(C,B,C.length));
+    }
+}
