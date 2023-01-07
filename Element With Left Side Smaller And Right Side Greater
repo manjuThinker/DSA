@@ -1,0 +1,43 @@
+import java.util.*;
+
+
+public class ElementWithLeftSideSmallerAndRightSideGreater {
+    public int findElement(int arr[], int n){
+        int []left= new int[n];
+        int []right=new int[n];
+        int max=Integer.MIN_VALUE;
+        int min=Integer.MAX_VALUE;
+        int result=0;
+        for(int i=0;i<n-1;i++){
+            max=Math.max(max,arr[i]);
+            left[i]=max;
+            }
+        for(int i=0;i<left.length;i++){
+            System.out.print("  "+left[i]);
+        }
+        for(int i=n-1;i>=0;i--){
+            min=Math.min(min,arr[i]);
+            right[i]=min;
+        }
+        System.out.println();
+        for(int i=0;i<right.length;i++){
+            System.out.print("  "+right[i]);
+        }
+
+        for (int i=1;i<n-1;i++){
+            if (left[i-1]<=arr[i] && right[i+1]>=arr[i]){
+                result=arr[i];
+                return result;
+            }
+        }
+
+        System.out.println();
+        return -1;
+    }
+    public static void main(String args[]) {
+        ElementWithLeftSideSmallerAndRightSideGreater X = new ElementWithLeftSideSmallerAndRightSideGreater();
+        int [] C={4, 2, 5, 7};
+        System.out.println(X.findElement(C,C.length));
+    
+    }
+}
