@@ -1,0 +1,37 @@
+import java.util.*;
+
+class SecondMostRepeatedStringInASequence {
+
+   String secFrequent(String arr[], int N)
+    {
+       int max=Integer.MIN_VALUE;
+        int secondMax=0;
+        LinkedHashMap<String,Integer> count=new LinkedHashMap<>();
+        for(int i=0;i<N;i++){
+            if (count.containsKey(arr[i])) {
+                count.put(arr[i], count.get(arr[i]) + 1);
+                if (count.get(arr[i])>max){
+                    max=count.get(arr[i]);
+                }
+            } else {
+                count.put(arr[i], 1);
+            }
+        }
+
+        String result="";
+        for (Map.Entry<String,Integer> entry:count.entrySet()){
+            if (entry.getValue()<max &&  entry.getValue() > secondMax){
+                secondMax=entry.getValue();
+                result= entry.getKey();
+            }
+        }
+        return result;
+    }
+        public static void main(String args[]) {
+            SecondMostRepeatedStringInASequence X = new SecondMostRepeatedStringInASequence();
+            String [] C = {"aaa", "bbb", "ccc", "bbb", "aaa", "aaa"};
+            System.out.println(X.secFrequent(C,C.length));
+
+        }
+}
+
