@@ -1,0 +1,51 @@
+import java.util.*;
+
+class TwoRepeatedElements {
+//first method exceeds time limit of 1.86 secs
+    public int[] twoRepeated(int arr[], int N)
+    {  int[] result=new int[2];
+        int counter=0;
+        int z=0;
+       HashMap<Integer,Integer> count=new HashMap<>();
+        for (int i = 0; i < N; i++) {
+            if (count.containsKey(arr[i])) {
+                if (counter != 2) {
+                    result[z] = arr[i];
+                    z++;
+                    counter++;
+                }
+                count.put(arr[i], count.get(arr[i]) + 1);
+            } else
+                count.put(arr[i], 1);
+        }
+
+     //output reference
+        System.out.println(Arrays.toString(result));
+        return result;
+
+    }
+    //optimized solution method
+    public int[] twoRepeated(int arr[], int N) {
+        int[] result = new int[2];
+        int z=0;
+        for (int i = 0; i < arr.length; i++) {
+            int abs_val = Math.abs(arr[i]);
+            if (arr[abs_val] > 0) {
+                arr[abs_val] = -arr[abs_val];
+            }
+            else
+                result[z++]=abs_val;
+        }
+        //output reference
+        System.out.println(Arrays.toString(result));
+        return result;
+    }
+
+    public static void main(String args[]) {
+        TwoRepeatedElements X = new TwoRepeatedElements();
+        int[] C = {1,2,1,3,4,3};
+        System.out.println(X.twoRepeated(C, 4));
+
+    }
+}
+
