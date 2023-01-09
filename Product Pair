@@ -1,0 +1,23 @@
+import java.util.*;
+
+class ProductPair {
+  //optimized method
+    boolean isProduct(int[] arr, int n, long x) {
+          HashSet<Long> set = new HashSet<>();
+        for(int i = 0; i<n; i++){
+            if(arr[i]!=0 && x%arr[i]==0){
+                if(set.contains(x/arr[i])) return true;
+                else set.add(Long.valueOf(arr[i]));
+            }
+        }
+        return false;
+    }
+
+    public static void main(String args[]) {
+        ProductPair X = new ProductPair();
+        int[] C= {10, 20, 9, 40};
+        System.out.println(X.isProduct(C, C.length,400));
+
+    }
+}
+
