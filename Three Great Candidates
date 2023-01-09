@@ -1,0 +1,23 @@
+import java.util.*;
+
+class ThreeGreatCandidates {
+    long maxProduct(int[] arr, int n) {
+        if(n<3){
+            return -1;
+        }
+        Arrays.sort(arr);
+        long maxout=(long)arr[n-1]*arr[n-2]*arr[n-3];
+        long sout=(long)arr[0]*arr[1]*arr[n-1];
+        long res=(long)Math.max(maxout,sout);
+        return res;
+
+    }
+
+    public static void main(String args[]) {
+        ThreeGreatCandidates X = new ThreeGreatCandidates();
+        int[] C= {10, 3, 5, 6, 20};
+        System.out.println(X.maxProduct(C, C.length));
+
+    }
+}
+
