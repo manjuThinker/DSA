@@ -1,0 +1,41 @@
+import java.util.Arrays;
+
+import java.util.*;
+ class MinimumIndexedCharacterOfSecondString {
+
+     public static String printMinIndexChar(String S, String patt) {
+         int result = Integer.MAX_VALUE;
+         String output = "";
+         HashMap<Character, Integer> count = new HashMap<>();
+         for (int i = 0; i < S.length(); i++) {
+             if (count.containsKey(S.charAt(i))) {
+                 continue;
+             } else
+                 count.put(S.charAt(i), i);
+         }
+         for (int i = 0; i < patt.length(); i++) {
+             if (count.containsKey(patt.charAt(i))) {
+                 if (count.get(patt.charAt(i)) < result) {
+                     result = count.get(patt.charAt(i));
+                     out = String.valueOf(patt.charAt(i));
+                 }
+             } else
+                 continue;
+         }
+         if (result < 0 || result == Integer.MAX_VALUE) {
+             return "$";
+         }
+         return output;
+     }
+
+
+    public static void main(String args[]) {
+        MinimumIndexedCharacterOfSecondString X = new MinimumIndexedCharacterOfSecondString();
+        String A = "zsyle";
+        String B="bjz";
+        System.out.println(X.printMinIndexChar(A,B));
+    
+    }
+
+
+}
