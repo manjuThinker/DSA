@@ -1,0 +1,45 @@
+import java.util.*;
+
+class CheckIfFrequenciesCanBeEqual {
+    boolean areKAnagrams(String s1, String s2, int k) {
+        HashMap<Character,Integer> count=new HashMap<>();
+        for(int i=0;i<s.length();i++){
+            if (count.containsKey(s.charAt(i))) {
+                count.put(s.charAt(i),count.get(s.charAt(i))+1);
+            } else  count.put(s.charAt(i), 1);
+
+        }
+        /*   System.out.print(Arrays.asList(count));*/
+        HashSet<Integer> al=new HashSet<>();
+        for (Map.Entry<Character,Integer> entry:count.entrySet()) {
+            al.add(entry.getValue());
+        }
+        if(al.size()==1){
+            return true;
+        }
+
+        if(al.size()>2){
+            return false;
+        }
+        ArrayList<Integer> all=new ArrayList<>(al);
+        if (al.size()==2){
+            if(al.contains(1)) {
+                return true;
+            } else if (Math.abs(Math.subtractExact(all.get(0), all.get(1)))==1) {
+                return true;
+            }
+            else return false;
+        }
+
+        return true;
+    }
+
+    public static void main(String args[]) {
+        CheckIfFrequenciesCanBeEqual X = new CheckIfFrequenciesCanBeEqual();
+        String A = "fodr";
+        String B = "gork";
+        System.out.println(X.areKAnagrams(A,B,2));
+
+    }
+}
+
