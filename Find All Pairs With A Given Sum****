@@ -1,0 +1,35 @@
+
+import java.util.*;
+class FindAllPairsWithAGivenSum {
+    class pair  {
+        long first, second;
+        public pair(long first, long second)
+        {
+            this.first = first;
+            this.second = second;
+        }
+    }
+
+    public pair[] allPairs( long A[], long B[], long N, long M, long X) {
+        Arrays.sort(A);
+        Arrays.sort(B);
+        ArrayList<pair> al=new ArrayList<>();
+        for (int i=0;i<N;i++){
+            for (int j=0;j<M;j++){
+                if (A[i]+B[j]==X){
+                    al.add(new pair(A[i],B[j]));
+                }
+            }
+        }
+
+        pair[] p=new pair[al.size()];
+        al.toArray(p);
+        return p;
+    }
+   public static void main(String args[]) {
+        FindAllPairsWithAGivenSum X = new FindAllPairsWithAGivenSum();
+        long[] C = {1, 2, 4, 5, 7};
+        long[] A = {5, 6, 3, 4, 8} ;
+        System.out.println(X.allPairs(C,A,C.length,A.length,9));
+   }
+}
