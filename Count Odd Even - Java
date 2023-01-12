@@ -1,0 +1,22 @@
+
+import java.util.*;
+class CountOddEvenJava {
+    static void countOddEven(int a[], int n) {
+        int odd=0, even=0;
+        for (int i:a){
+           if(i%2==0){
+               even++;
+           }
+           if (i%2>0){
+               odd++;
+           }
+       }
+        System.out.print(odd+" "+even);
+
+    }
+   public static void main(String args[]) {
+        CountOddEvenJava X = new CountOddEvenJava();
+        int[] C = {1, 2, 3, 4 ,5};
+        X.countOddEven(C,C.length);
+   }
+}
