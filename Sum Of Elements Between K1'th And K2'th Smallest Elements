@@ -1,0 +1,31 @@
+import java.util.*;
+
+class SumOfElementsBetweenK1thAndK2thSmallestElements {
+
+    public static long sumBetweenTwoKth(long A[], long N, long K1, long K2)
+    {
+        Arrays.sort(A);
+        long start=A[(int) K1-1];
+        long end=A[(int) K2-1];
+        long sum=0;
+        for (int i=0;i<A.length;i++){
+            if(A[i]>start && A[i]<end){
+                sum+=A[i];
+            }
+        }
+        System.out.println(start);
+        System.out.println(end);
+
+        System.out.println(Arrays.toString(A));
+        return sum;
+    }
+    public static void main(String args[]) {
+        SumOfElementsBetweenK1thAndK2thSmallestElements X = new SumOfElementsBetweenK1thAndK2thSmallestElements();
+        long[] C= {10, 2, 50, 12, 48, 13};
+        System.out.println(X.sumBetweenTwoKth(C,C.length,2,6));
+
+    }
+
+
+}
+
