@@ -1,0 +1,23 @@
+import java.util.*;
+
+class MaxDistanceBetweenSameElements {
+
+    int maxDistance(int arr[], int n) {
+        HashMap<Integer,Integer> count=new HashMap<>();
+        int max=0;
+        for (int i=0;i<arr.length;i++){
+            if(count.containsKey(arr[i])){
+                max=Math.max(max,i-count.get(arr[i]));
+            }
+            else count.put(arr[i],i);
+        }
+        return max;
+    }
+    public static void main(String args[]) {
+        MaxDistanceBetweenSameElements X = new MaxDistanceBetweenSameElements();
+        int[] C= {1, 1, 2, 2, 2, 1};
+        System.out.println(X.maxDistance(C,C.length));
+
+   }
+}
+
