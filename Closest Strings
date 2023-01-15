@@ -1,0 +1,39 @@
+import java.util.*;
+
+class ClosestStrings {
+
+
+        int shortestDistance(ArrayList<String> s, String word1, String word2) {
+            int start=Integer.MIN_VALUE;
+            int last=Integer.MIN_VALUE;
+            int min=Integer.MAX_VALUE;
+            int diff=0;
+            for(int i=0;i<s.size();i++){
+                String str= s.get(i);
+                if(str.equals(word1))
+                    start=i;
+                if(str.equals(word2))
+                    last=i;
+                if(start>=0 && last >=0){
+                    diff=Math.abs(start-last);
+                    min=Math.min(diff,min);
+                }
+            }
+
+            return min;
+    }
+    public static void main(String args[]) {
+        ClosestStrings X = new ClosestStrings();
+        ArrayList<String> al=new ArrayList<>();
+        al.add( "the");
+        al.add("quick");
+        al.add("brown");
+        al.add("fox");
+        al.add("quick");
+        System.out.println(X.shortestDistance(al,"fox","the"));
+
+    }
+
+
+}
+
