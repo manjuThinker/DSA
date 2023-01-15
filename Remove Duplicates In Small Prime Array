@@ -1,0 +1,20 @@
+import java.util.*;
+
+class ThirdLargestElement {
+
+    ArrayList<Integer> removeDuplicate(int arr[], int n)
+    {
+        LinkedHashSet<Integer> hs=new LinkedHashSet<>();
+        for (int i:arr){
+            hs.add(i);
+        }
+        ArrayList<Integer> al=new ArrayList<>(hs);
+        return al;
+    }
+    public static void main(String args[]) {
+        RemoveDuplicatesInSmallPrimeArray X = new RemoveDuplicatesInSmallPrimeArray();
+        int[] C=  {2,2,3,3,7,5};
+       System.out.println(X.removeDuplicate(C,C.length));
+    }
+}
+
