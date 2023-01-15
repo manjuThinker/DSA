@@ -1,0 +1,27 @@
+import java.util.*;
+
+class CheckIfArrayContainsContiguousIntegers {
+    public static boolean areElementsContiguous (int arr[], int n) {
+            HashSet<Integer> hs=new HashSet<>();
+            for (int i:arr){
+                hs.add(i);
+            }
+        int count = 0;
+        for (Integer i : hs) {
+            if (count + 1 != hs.size()) {
+                if (!hs.contains(i+1)) {
+                    return false;
+                }
+            }
+            count++;
+        }
+        return true;
+    }
+    public static void main(String args[]) {
+        CheckIfArrayContainsContiguousIntegers X = new CheckIfArrayContainsContiguousIntegers();
+        int[] C=  {5, 2, 3, 6, 4, 4, 6, 6};
+        System.out.println(X.areElementsContiguous(C,C.length));
+
+    }
+}
+
