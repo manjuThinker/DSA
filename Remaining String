@@ -1,0 +1,32 @@
+import java.util.*;
+
+class RemainingString {
+
+    String printString(String S, char ch, int count) {
+       int temp=0;
+       String result="";
+       if(count==0) return S;
+        for (int i=0;i<S.length();i++) {
+            if ((S.charAt(i)==ch)) {
+               temp++;
+                if ((S.charAt(i)==ch && temp==count && !(i ==S.length()-1))){
+                    result=S.substring(i+1);
+                    break;
+                }
+
+            }
+        }
+        if(result=="") return "Empty string";
+
+            return result;
+    }
+    public static void main(String args[]) {
+        RemainingString X = new RemainingString();
+        String A = "Thisisdemostring";
+        System.out.println(X.printString(A,'i',3));
+
+    }
+
+
+}
+
