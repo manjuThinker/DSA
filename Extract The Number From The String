@@ -1,0 +1,41 @@
+import java.util.*;
+
+
+public class ExtractTheNumberFromTheString {
+
+    long ExtractNumber(String S){
+        String temp="";
+        long max=0;
+        for (int i=0;i<S.length();i++){
+            if(Character.isDigit(S.charAt(i))){
+                temp=temp+S.charAt(i);
+            }
+            else {
+                if (temp.length() != 0 && !temp.contains("9")) {
+                    if(Long.parseLong(temp)> max){
+                        max=Long.parseLong(temp);
+                    }
+                    temp = "";
+                }
+                else temp = "";
+            }
+        }
+        if(temp.length() != 0 && !temp.contains("9"))
+            if(Long.parseLong(temp)> max){
+                max=Long.parseLong(temp);
+            }
+        if (max==0){
+            return -1;
+        }
+        return max;
+
+    }
+    public static void main(String args[]) {
+        ExtractTheNumberFromTheString X = new ExtractTheNumberFromTheString();
+        String A = "This is alpha 5057 and 97";
+        System.out.println(X.ExtractNumber(A));
+
+    }
+}
+
+
