@@ -1,0 +1,33 @@
+import java.util.*;
+
+
+public class RearrangeAstring {
+    public String arrangeString(String s)
+    {
+        int  count=0;
+       ArrayList<Character> al=new ArrayList<>();
+        for (int i=0;i<s.length();i++){
+            if(Character.isAlphabetic(s.charAt(i))) {
+                al.add(s.charAt(i));
+            }
+            else count += Integer.parseInt(String.valueOf(s.charAt(i)));
+        }
+        StringBuilder result= new StringBuilder();
+        Collections.sort(al);
+        for (char c:al){
+            result.append(c);
+        }
+        if(count!=0) {
+            result.append(count);
+        }
+        return result.toString();
+    }
+    public static void main(String args[]) {
+        RearrangeAstring X = new RearrangeAstring();
+        String A = "ACCBA10D2EW30";
+        System.out.println(X.arrangeString(A));
+
+    }
+}
+
+
