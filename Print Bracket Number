@@ -1,0 +1,33 @@
+import java.util.*;
+
+class PrintBracketNumber {
+
+    ArrayList<Integer> barcketNumbers(String S) {
+        ArrayList<Integer> al=new ArrayList<>();
+        int count=0;
+        Stack<Integer> st=new Stack<>();
+        for (int i=0;i<S.length();i++) {
+            if (S.charAt(i)=='(') {
+               count++;
+               st.push(count);
+               al.add(st.peek());
+            } else {
+                if(st.isEmpty()==false && S.charAt(i)==')'){
+                    al.add(st.peek());
+                    st.pop();
+                }
+            }
+        }
+        return al;
+    }
+
+    public static void main(String args[]) {
+        PrintBracketNumber X = new PrintBracketNumber();
+        String A = "(aa(bdc))p(dee)â€‹";
+        System.out.println(X.barcketNumbers(A));
+
+    }
+
+
+}
+
