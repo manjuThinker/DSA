@@ -1,0 +1,32 @@
+import java.util.*;
+
+class SortAstack {
+    public Stack<Integer> sort(Stack<Integer> s)
+    {
+        int []temp=new int[s.size()];
+        int j=0;
+        while (!s.isEmpty()) {
+            temp[j] = s.peek();
+            s.pop();
+            j++;
+        }
+        java.util.Arrays.sort(temp);
+        for (int i=0;i<temp.length;i++) {
+           s.push(temp[i]);
+        }
+        return s;
+    }
+
+    public static void main(String args[]) {
+        SortAstack X = new SortAstack();
+        Stack<Integer> st=new Stack<>();
+        st.push(41);
+        st.push(3);
+        st.push(32);
+        st.push(2);
+        st.push(11);
+        System.out.println(X.sort(st));
+
+    }
+}
+
