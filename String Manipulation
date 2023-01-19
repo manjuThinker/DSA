@@ -1,0 +1,30 @@
+import java.util.*;
+
+class StringManipulation {
+    static int removeConsecutiveSame(Vector <String > v)
+    {
+        Stack<String> st=new Stack<>();
+        for (int i=0;i<v.size();i++) {
+            if (st.size()==0) {
+                st.push(v.get(i));
+            } else if (st.peek().equals(v.get(i))) {
+                st.pop();
+            }
+            else st.push(v.get(i));
+        }
+        return st.size();
+    }
+    public static void main(String args[]) {
+        StringManipulation X = new StringManipulation();
+        Vector<String> vt=new Vector<>();
+        vt.add("ab");
+        vt.add("aa");
+        vt.add("aa");
+        vt.add("bcd");
+        vt.add("ab");
+        System.out.println(X.removeConsecutiveSame(vt));
+
+    }
+
+}
+
