@@ -1,0 +1,30 @@
+import java.util.*;
+
+
+public class ReversingTheEquation {
+
+    String reverseEqn(String S)
+    {
+     String[] temp=S.split("[^a-z0-9]");
+     StringBuilder sb=new StringBuilder();
+     int j= temp.length-1;
+     for (int i=S.length()-1;i>=0;i--) {
+         if (Character.isAlphabetic(S.charAt(i)) || Character.isDigit(S.charAt(i))) {
+             continue;
+         } else {
+             sb.append(temp[j--]);
+             sb.append(S.charAt(i));
+         }
+     }
+     sb.append(temp[0]);
+     return sb.toString();
+     }
+
+    public static void main(String args[]) {
+        ReversingTheEquation X = new ReversingTheEquation();
+        String A = "20-3+5*2";
+        System.out.println(X.reverseEqn(A));
+    }
+}
+
+
