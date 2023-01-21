@@ -1,0 +1,41 @@
+import java.util.*;
+
+
+public class DeleteMiddleElementOfAStack {
+    public void deleteMid(Stack<Integer>s,int sizeOfStack){
+        Stack<Integer> stack = new Stack<>();
+        int size = sizeOfStack / 2;
+        int temp = sizeOfStack;
+        while(!s.isEmpty()){
+            stack.add(s.pop());
+            temp--;
+            if(sizeOfStack%2!=0){
+                if(temp-1==size){
+                    s.pop();
+                }
+            }else{
+                if(temp==size){
+                   s.pop();
+                }
+           }
+        }
+        while(!stack.isEmpty()){
+            s.push(stack.pop());
+        }
+    }
+
+    public static void main(String args[]) {
+        DeleteMiddleElementOfAStack X = new DeleteMiddleElementOfAStack();
+        Stack<Integer> test = new Stack<>();
+        test.push(1);
+        test.push(2);
+        test.push(3);
+        test.push(4);
+        test.push(5);
+        X.deleteMid(test,test.size());
+        System.out.println(test);
+
+    }
+}
+
+
