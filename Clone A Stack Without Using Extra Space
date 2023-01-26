@@ -1,0 +1,23 @@
+
+import java.util.*;
+
+ class CloneAStackWithoutUsingExtraSpace {
+
+     void clonestack(Stack<Integer> st, Stack<Integer> cloned) {
+
+        cloned.addAll(st);
+     }
+     
+       public static void main(String args[]) {
+        CloneAStackWithoutUsingExtraSpace X = new CloneAStackWithoutUsingExtraSpace();
+        Stack<Integer> al=new Stack<>();
+        al.push(3);
+        al.push(2);
+        al.push(1);
+        al.push(7);
+        al.push(6);
+        Stack<Integer> clone=new Stack<>();
+        X.clonestack(al,clone);
+        System.out.println(clone);
+   }
+}
