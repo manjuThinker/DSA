@@ -1,0 +1,30 @@
+import java.util.Arrays;
+
+import java.util.*;
+ class ReverseAStack {
+
+     static void reverse(Stack<Integer> s)
+     {
+         Queue<Integer> q=new LinkedList<>();
+         while (!s.isEmpty()){
+             q.add(s.pop());
+         }
+         while (!q.isEmpty()) {
+             s.push(q.remove());
+         }
+         System.out.println(s);
+     }
+     
+     //java one-liner  "Collections.reverse(s);"
+     
+    public static void main(String args[]) {
+        ReverseAStack X = new ReverseAStack();
+        Stack<Integer> al=new Stack<>();
+        al.push(3);
+        al.push(2);
+        al.push(1);
+        al.push(7);
+        al.push(6);
+        X.reverse(al);
+    }
+}
