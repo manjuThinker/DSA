@@ -1,0 +1,31 @@
+import java.util.*;
+class MajorityElementInTheArray
+{
+    static int majorityElement(int a[], int size)
+    {
+         HashMap<Integer,Integer> h=new HashMap<Integer,Integer>();
+        for(int i=0;i<size;i++){
+            if(h.containsKey(a[i])){
+                int c=h.get(a[i])+1;
+                h.put(a[i],c);
+            }
+            else
+            h.put(a[i],1);
+        }
+        for(Map.Entry i:h.entrySet()){
+            int t=(Integer)i.getValue();
+            if(t>size/2){
+                int x=(Integer)i.getKey();
+                return x;
+            }
+        }
+        return -1;
+    }
+   public static void main(String args[]) {
+         MajorityElementInTheArray X = new MajorityElementInTheArray();
+        int A[] = {1,2,3};
+        System.out.println(X.remAnagrams(A,A.length));
+         
+
+     }
+}
