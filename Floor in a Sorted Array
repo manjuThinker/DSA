@@ -1,0 +1,23 @@
+package dsa;
+
+
+public class test {
+	static int findFloor(long arr[], int n, long x) {
+
+		for (int i = n - 1; i >= 0; i--) {
+			if (arr[i] <= x) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	public static void main(String[] args) {
+
+		test ds = new test();
+		long[] A = { 1, 2, 8, 10, 11, 12, 19 };
+		System.out.println(test.findFloor(A, A.length, 10));
+
+	}
+
+}
