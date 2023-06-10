@@ -1,0 +1,42 @@
+package practice;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+
+public class practice {
+
+	public void Rearrange(int a[], int n) {
+
+		ArrayList<Integer> positive = new ArrayList<>();
+		ArrayList<Integer> negative = new ArrayList<>();
+		for (int i : a) {
+			if (i < 0) {
+				negative.add(i);
+			} else {
+				positive.add(i);
+			}
+		}
+
+		negative.addAll(positive);
+
+		for (int i = 0; i < n; i++) {
+
+			a[i] = negative.get(i);
+		}
+
+		System.out.println(Arrays.toString(a));
+
+	}
+
+	public static void main(String args[]) {
+
+		practice p = new practice();
+
+		int Arr[] = { -3, 1, 0, -2 };
+
+		p.Rearrange(Arr, 4);
+
+	}
+
+}
