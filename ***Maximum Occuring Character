@@ -28,6 +28,30 @@ import java.util.*;
          return k;
 
      }
+--------------------------
+import java.util.*;
+import java.util.stream.*;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(getMaxOccuringChar("testsample")); // Outputs: e
+        System.out.println(getMaxOccuringChar("output"));     // Outputs: t
+    }
+
+    public static char getMaxOccuringChar(String str) {
+        Map<Character, Long> frequencyMap = str.chars()
+            .mapToObj(c -> (char) c)
+            .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
+
+        return frequencyMap.entrySet().stream()
+            .max(Comparator.comparingLong(Map.Entry::getValue)
+                .thenComparing(Comparator.comparing(Map.Entry::getKey)))
+            .get()
+            .getKey();
+    }
+}
+------------------------------
+
 
      public static void main(String args[]) {
          MaximumOccuringCharacter X = new MaximumOccuringCharacter();
